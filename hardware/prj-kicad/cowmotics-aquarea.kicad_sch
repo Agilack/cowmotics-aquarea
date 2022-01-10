@@ -1,0 +1,194 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid e63e39d7-6ac0-4ffd-8aa3-1841a4541b55)
+
+  (paper "A4")
+
+  (title_block
+    (title "Cowmotics Panadonic Aquarea gateway")
+    (date "2022-01-10")
+    (rev "1")
+    (company "Agilack")
+    (comment 1 "Licence: CC-by-SA")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 135.89 104.14) (size 71.12 43.18) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 38d2e88e-817b-499b-a8dc-6ffe82e53baa)
+    (property "Sheet name" "Ethernet" (id 0) (at 135.89 103.4284 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "ethernet.kicad_sch" (id 1) (at 135.89 147.9046 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa" (page "2"))
+  )
+
+  (symbol_instances
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/2a619e60-9cf4-4215-ac9c-6cd9b6a85a7e"
+      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/3f567877-98f1-401f-8324-66c74e6cce4f"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/f58742f8-e57e-4646-a6f5-0463e0eceeb8"
+      (reference "#PWR0103") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/e0e3d2de-f69a-411e-9a07-0a6249e1b2ce"
+      (reference "#PWR0104") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/9ec3048f-a2b1-4a62-93ca-107041eae2bc"
+      (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/f9415c74-4311-4f17-83f3-cacef00b3909"
+      (reference "#PWR0106") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/917471a4-9b48-4daa-ac28-a70096e8cbd4"
+      (reference "#PWR0107") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/7a6e5b54-0c2b-40c6-b4e9-6db7ea8f6c20"
+      (reference "#PWR0108") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/7039daa0-8fbe-4fdd-8fe6-857ecf015e49"
+      (reference "#PWR0109") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/187127d5-67c2-4dcb-b98e-4f8d33fbe42c"
+      (reference "#PWR0110") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/f3298a8b-9f37-48f9-830e-41082681187a"
+      (reference "#PWR0111") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/0b9e7ca0-9d50-423a-94c8-1dda9a2eaa73"
+      (reference "#PWR0112") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/6352b0cf-5a97-4db6-adc4-a7734abccdb4"
+      (reference "#PWR0113") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/9e949464-7ffd-49d4-a5a5-7bdcdb22ae80"
+      (reference "#PWR0114") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/6413d790-6d93-445b-b58a-f8adbf376f1a"
+      (reference "#PWR0115") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/121ea2e0-96b9-46ce-8c7b-861e99535a42"
+      (reference "#PWR0116") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/ee0a7447-2bcf-4418-9a35-aea3cf6a1ac6"
+      (reference "#PWR0117") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/eeaf824e-4ff9-4425-9482-4f0bf5def4b1"
+      (reference "#PWR0118") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/a28781bf-a30f-45a3-a62f-4223427e99bb"
+      (reference "#PWR0119") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/d173a7dd-5250-45dc-94c6-d6551fe3dbf2"
+      (reference "#PWR0120") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/068e20f9-9be3-49c9-994c-4e1e2eeab862"
+      (reference "#PWR0121") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/2099c3a2-e5df-486d-9e87-ba5d88fecd9d"
+      (reference "#PWR0122") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/82e15225-a105-45b2-84d4-4b70931897e0"
+      (reference "#PWR0123") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/34fb8779-9a92-44ba-b6c9-7eaf7f2a97bd"
+      (reference "#PWR0124") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/05e6eb4b-2f56-4c66-bf5e-51bd6c80798e"
+      (reference "#PWR0125") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/e4901cdd-b675-43fa-95c2-426e8c824f2f"
+      (reference "C1") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/712b4330-720b-4ef0-8d4b-aa17dd281435"
+      (reference "C2") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/3dde78c2-2e53-4d0e-a734-7b95897f7f64"
+      (reference "C3") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/6149507c-e68b-4b95-b5d1-9598de14290e"
+      (reference "C4") (unit 1) (value "22uF") (footprint "cowmotics-aquarea:SMD0805")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/128f9f60-5d3c-4d0e-801f-d569bc619222"
+      (reference "C5") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/d2f3d0a3-fc75-47a7-9c7a-e6abf684176c"
+      (reference "C6") (unit 1) (value "22uF") (footprint "cowmotics-aquarea:SMD0805")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/62cd15dc-fbc5-4a9d-959b-f69a089e7c1f"
+      (reference "C7") (unit 1) (value "1uF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/6e4fdb4f-6ce3-45df-a99e-10febae9ff31"
+      (reference "C8") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/8f207e00-886c-4f46-9355-3a8e7985a8d3"
+      (reference "C9") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/18a9dea8-caa6-40a3-962a-7699d9146e17"
+      (reference "J1") (unit 1) (value "CONN_RJ45") (footprint "cowmotics-aquarea:CONN_615008185121")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/ec075aee-9a67-4dd0-9403-ff58215d0638"
+      (reference "L1") (unit 1) (value "FB100") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/bea8a93b-5d86-4516-aa08-d642cf48f2e6"
+      (reference "Q1") (unit 1) (value "BC846") (footprint "cowmotics-aquarea:SOT23-3")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/3755109f-ba27-42ae-bfcd-35cbf03df7b8"
+      (reference "R1") (unit 1) (value "75") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/002271bd-fbeb-4af9-81f0-195ad0a1d3c7"
+      (reference "R2") (unit 1) (value "75") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/199a94a4-dd72-49c8-8698-b931f47ff383"
+      (reference "R3") (unit 1) (value "75") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/e32df7f5-768c-45fa-8f8d-6d60c87349e3"
+      (reference "R4") (unit 1) (value "75") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/9d3545bb-4848-4d9f-a3e2-b087c5a7b710"
+      (reference "R5") (unit 1) (value "330") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/6eceb367-0e33-49d3-ab72-eccc8f2a2b26"
+      (reference "R6") (unit 1) (value "330") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/ea8d5dbf-ef24-4053-abfd-7ca65b8d9abc"
+      (reference "R7") (unit 1) (value "6,49k") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/10224ade-6f57-429e-ac15-00ad22fe9f7e"
+      (reference "R8") (unit 1) (value "49.9") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/fb847691-a236-48f0-9f44-65a418dab540"
+      (reference "R9") (unit 1) (value "4,7k") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/314ee7eb-95c2-4602-b3df-42714dab3430"
+      (reference "R10") (unit 1) (value "4,7k") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/62d074eb-76e7-45fa-b926-30e56818a76e"
+      (reference "R11") (unit 1) (value "10k") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/124c4101-d2f2-498f-b644-9d1e8f889004"
+      (reference "R12") (unit 1) (value "10k") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/a56deef6-ff70-4f97-bfaa-cc479299031a"
+      (reference "T1") (unit 1) (value "TRANSFORMER_1_1") (footprint "cowmotics-aquarea:TR_W749013011")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/2eea20e6-112c-411a-b615-885ae773135a"
+      (reference "U1") (unit 1) (value "KSZ8091RN") (footprint "cowmotics-aquarea:QFN24")
+    )
+    (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/bdfc4715-c6ee-47ec-8978-077838963a54"
+      (reference "X1") (unit 1) (value "50MHz") (footprint "cowmotics-aquarea:Q_SMD5x3")
+    )
+  )
+)
