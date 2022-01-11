@@ -438,6 +438,10 @@
     [
       "38d2e88e-817b-499b-a8dc-6ffe82e53baa",
       "Ethernet"
+    ],
+    [
+      "825065db-dc11-43e9-aa2e-59e6b2cd21f3",
+      "Processor & Wifi"
     ]
   ],
   "text_variables": {}
