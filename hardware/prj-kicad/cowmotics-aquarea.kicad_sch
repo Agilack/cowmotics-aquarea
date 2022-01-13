@@ -40,10 +40,23 @@
     )
   )
 
+  (sheet (at 33.655 33.655) (size 71.12 43.18) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 98155800-78e7-48e2-b416-a5948d22b132)
+    (property "Sheet name" "Aquarea Interface" (id 0) (at 33.655 32.9434 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "aquarea.kicad_sch" (id 1) (at 33.655 77.4196 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
   (sheet_instances
     (path "/" (page "1"))
     (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa" (page "2"))
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3" (page "3"))
+    (path "/98155800-78e7-48e2-b416-a5948d22b132" (page "4"))
   )
 
   (symbol_instances
@@ -209,6 +222,78 @@
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3/1bec898b-7392-48b3-874e-4cf8b4d81705"
       (reference "#PWR0154") (unit 1) (value "GND") (footprint "")
     )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/a24579c0-8f16-4c68-b896-1ec34d92a6c4"
+      (reference "#PWR0155") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/df4a707f-c422-45b9-846e-5f8beda1b995"
+      (reference "#PWR0156") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/8941ba23-15e2-4939-ba0d-2ca7f1f5ac1b"
+      (reference "#PWR0157") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/f8b6bb9f-ad03-4bcb-9251-2a066978a098"
+      (reference "#PWR0158") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/deb3c8d4-cd4a-4c3f-9749-bd9ef6b7b0d7"
+      (reference "#PWR0159") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/2523fb7d-bdf6-476e-87d5-a6e44e66f2d6"
+      (reference "#PWR0160") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/ae02e6ad-b22a-4981-9b68-ea9b5483cbf0"
+      (reference "#PWR0161") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/cc9ecc58-049e-4be1-b641-c31882f37ca7"
+      (reference "#PWR0162") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/4e51c7be-5689-4060-9944-a768ee0964e6"
+      (reference "#PWR0163") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/76d96292-67d7-4661-baf1-dfdd20b23b48"
+      (reference "#PWR0164") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/8c35d187-d2af-4c4c-a5db-5041491ae221"
+      (reference "#PWR0165") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/960e3980-6992-4f2f-be18-9d55b25deb4f"
+      (reference "#PWR0166") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/646eb608-8655-4892-b3d9-d0c69b132ad5"
+      (reference "#PWR0167") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/dd76ffd3-cf84-4264-9b48-46e38b2e06ed"
+      (reference "#PWR0168") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/070569f3-8118-41a9-ae0d-9ac889645e9d"
+      (reference "#PWR0169") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/105c56d1-30e6-4a56-976f-42759cb1f7f2"
+      (reference "#PWR0170") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/8152e6f5-b60f-4c0c-ac89-7de02362ab60"
+      (reference "#PWR0171") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/05b16ca9-6086-4d32-aa87-2738c8656874"
+      (reference "#PWR0172") (unit 1) (value "+12V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/6da368c0-01b4-4b20-8f83-3377f60df388"
+      (reference "#PWR0173") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/1302e146-4d18-4a35-b511-025dc46a5910"
+      (reference "#PWR0174") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/110987fe-4f33-4568-96f4-a15ba51a26fb"
+      (reference "#PWR0175") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/12fa97ca-9c7c-4df1-bac7-aa03d210c139"
+      (reference "#PWR0176") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/035aefe0-7417-4380-8cad-ff04e2942bb6"
+      (reference "#PWR0177") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/2397e841-1be1-415f-a1b9-7ff8d54aff04"
+      (reference "#PWR0178") (unit 1) (value "+3.3V") (footprint "")
+    )
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3/e7cc7ad7-f806-48cf-ae6e-20dfcc5dcaee"
       (reference "A1") (unit 1) (value "ANTENNA") (footprint "cowmotics-aquarea:CONN_SMA_RA")
     )
@@ -278,8 +363,32 @@
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3/2089e40a-bc36-4da8-b94f-f363a3f3f68e"
       (reference "C23") (unit 1) (value "1uF") (footprint "cowmotics-aquarea:SMD0603")
     )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/53279ea3-2f0b-40ec-b25e-0a09cafac841"
+      (reference "C25") (unit 1) (value "10uF") (footprint "cowmotics-aquarea:SMD1210")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/113db992-658b-4f23-8b16-4522e5d594a2"
+      (reference "C26") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/8d3a9eec-e9a7-4f7a-a913-1c4b83c46ec3"
+      (reference "C27") (unit 1) (value "100nF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/7844fa1c-c2e9-46d4-aee9-55128915096f"
+      (reference "C28") (unit 1) (value "10uF") (footprint "cowmotics-aquarea:SMD1210")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/e82ebb99-a6b9-48fa-9aa1-331985f42c93"
+      (reference "C29") (unit 1) (value "470pF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/b3b5d4a8-a7a4-4bdd-91c8-1d396734d302"
+      (reference "C30") (unit 1) (value "4,7uF") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/feda6d61-2233-4f26-b0c5-c1eee19352ad"
+      (reference "C31") (unit 1) (value "4,7uF") (footprint "cowmotics-aquarea:SMD0603")
+    )
     (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/18a9dea8-caa6-40a3-962a-7699d9146e17"
       (reference "J1") (unit 1) (value "CONN_RJ45") (footprint "cowmotics-aquarea:CONN_615008185121")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/91125ed1-04ac-414b-89bd-9ef46367e239"
+      (reference "J2") (unit 1) (value "CONN_5") (footprint "cowmotics-aquarea:CONN_691243310005")
     )
     (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/ec075aee-9a67-4dd0-9403-ff58215d0638"
       (reference "L1") (unit 1) (value "FB100") (footprint "cowmotics-aquarea:SMD0603")
@@ -289,6 +398,9 @@
     )
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3/0d087c84-db65-4f93-8a04-a5da574852b7"
       (reference "L3") (unit 1) (value "INDUCTOR") (footprint "cowmotics-aquarea:SMD0603")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/84c6da4f-5623-4a9c-a50d-ae757f720ada"
+      (reference "L4") (unit 1) (value "2,2uH") (footprint "cowmotics-aquarea:I_CDRH2D14")
     )
     (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/bea8a93b-5d86-4516-aa08-d642cf48f2e6"
       (reference "Q1") (unit 1) (value "BC846") (footprint "cowmotics-aquarea:SOT23-3")
@@ -397,6 +509,15 @@
     )
     (path "/825065db-dc11-43e9-aa2e-59e6b2cd21f3/f5db3b34-82eb-4087-85c1-08c4586de2aa"
       (reference "U3") (unit 1) (value "SST25VF016") (footprint "cowmotics-aquarea:SOIC-8")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/5460fda9-d078-489b-9094-c02aef678b0d"
+      (reference "U4") (unit 1) (value "SN74LVC1T45") (footprint "cowmotics-aquarea:SOT23-6")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/2d49add9-f626-4c40-beb6-abf539c8ce3f"
+      (reference "U5") (unit 1) (value "SN74LVC1T45") (footprint "cowmotics-aquarea:SOT23-6")
+    )
+    (path "/98155800-78e7-48e2-b416-a5948d22b132/f9a96519-3311-4449-9395-320ce48a3d34"
+      (reference "U6") (unit 1) (value "LM3671") (footprint "cowmotics-aquarea:SOT23-5")
     )
     (path "/38d2e88e-817b-499b-a8dc-6ffe82e53baa/bdfc4715-c6ee-47ec-8978-077838963a54"
       (reference "X1") (unit 1) (value "50MHz") (footprint "cowmotics-aquarea:Q_SMD5x3")
