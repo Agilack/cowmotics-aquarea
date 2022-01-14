@@ -1,0 +1,38 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,6.0.0*%
+%TF.CreationDate,2022-01-14T21:47:45+01:00*%
+%TF.ProjectId,cowmotics-aquarea,636f776d-6f74-4696-9373-2d6171756172,1*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Paste,Bot*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 6.0.0) date 2022-01-14 21:47:45*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10C,1.198880*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,TP8*%
+X167700000Y-113500000D03*
+%TD*%
+%TO.C,TP9*%
+X169500000Y-109500000D03*
+%TD*%
+%TO.C,TP5*%
+X146040000Y-121250000D03*
+%TD*%
+%TO.C,TP12*%
+X171000000Y-109500000D03*
+%TD*%
+%TO.C,TP10*%
+X169500000Y-113000000D03*
+%TD*%
+%TO.C,TP11*%
+X171000000Y-114000000D03*
+%TD*%
+%TO.C,TP6*%
+X143500000Y-121250000D03*
+%TD*%
+M02*
