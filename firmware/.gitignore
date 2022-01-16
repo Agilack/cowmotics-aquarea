@@ -1,0 +1,6 @@
+# Binary builds and temporary files
+build
+*.o
+
+# Editor backckups and temporary files
+*~
