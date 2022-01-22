@@ -12,4 +12,5 @@
 ##
 
 idf_component_register(SRCS "main.c"
-                       INCLUDE_DIRS "")
+                            "aquarea_ll.c"
+                       INCLUDE_DIRS ".")
