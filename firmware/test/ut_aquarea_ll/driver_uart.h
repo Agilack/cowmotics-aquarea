@@ -1,6 +1,6 @@
 /**
- * @file  main/aquarea_ll.h
- * @brief Headers and definitions for Aquarea low level functions
+ * @file  driver_uart.h
+ * @brief Headers and definition for special functions of UART simulation
  *
  * @author Saint-Genest Gwenael <gwen@agilack.fr>
  * @copyright Agilack (c) 2022
@@ -13,14 +13,13 @@
  * for more details.
  * This program is distributed WITHOUT ANY WARRANTY.
  */
-#ifndef AQUAREA_LL_H
-#define AQUAREA_LL_H
+#ifndef DRIVER_UART_H
+#define DRIVER_UART_H
 
-#define AQUAREA_UART 2
-#define AQUAREA_LOG
-
-int  aquarea_ll_init(void);
-void aquarea_ll_process(void);
-int  aquarea_ll_send(unsigned char *packet);
+void uart_init(void);
+void uart_set_buffer(unsigned char *src, int len);
+int  uart_test_drv(int force);
+int  uart_test_cfg(int force);
+int  uart_test_pin(int force);
 
 #endif

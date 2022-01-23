@@ -16,10 +16,14 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include "driver/uart.h"
 #include "esp_err.h"
 #include "aquarea_ll.h"
 
 /* UART connected to Aquarea */
+#if (AQUAREA_UART == 2)
+#define UART_PORT UART_NUM_2
+#endif
 #define UART_TXD  17
 #define UART_RXD  16
 #define UART_RTS  UART_PIN_NO_CHANGE
@@ -30,6 +34,17 @@
 uint16_t buffer_w;
 uint8_t  buffer_rx[BUFFER_SIZE];
 
+#ifdef AQUAREA_LOG
+unsigned int aquarea_ll_log = 0;
+#endif
+
+/* Declare RX handler, must be implemented elsewhere */
+void aquarea_rx(uint8_t *packet, size_t len);
+
+/* Internal functions */
+static uint8_t checksum(uint8_t *buffer, int len);
+static int checksum_verify(uint8_t *packet);
+
 /**
  * @brief Initialize the Aquarea low-level module
  *
@@ -37,8 +52,11 @@ uint8_t  buffer_rx[BUFFER_SIZE];
  * with Aquarea. This function must be called before any other function of this
  * module.
  */
-void aquarea_ll_init(void)
+int aquarea_ll_init(void)
 {
+#ifdef AQUAREA_LOG
+	aquarea_ll_log = 0;
+#endif
 	buffer_w = 0;
 	memset(buffer_rx, 0, BUFFER_SIZE);
 
@@ -60,11 +78,12 @@ void aquarea_ll_init(void)
 		goto init_fail;
 
 	/* Success \o/ */
-	return;
+	return(0);
 
 init_fail:
 	printf("AQUAREA: Failed to init interface\r\n");
 	// TODO Do something to clear this error or restart
+	return(-1);
 }
 
 /**
@@ -77,7 +96,9 @@ void aquarea_ll_process(void)
 {
 	uint8_t *pbuf;
 	size_t   avail_sz, pkt_sz, rem_sz, len;
-	int      i;
+#ifdef AQUAREA_LOG
+	int i;
+#endif
 
 	/* Test is some data has been received from remote */
 	if (uart_get_buffered_data_len(AQUAREA_UART, &avail_sz) != ESP_OK)
@@ -86,7 +107,10 @@ void aquarea_ll_process(void)
 	if (avail_sz <= 0)
 		return;
 
-	printf("Received %d bytes\r\n", (int)avail_sz);
+#ifdef AQUAREA_LOG
+	if (aquarea_ll_log & (1 << 8))
+		printf("Received %d bytes\r\n", (int)avail_sz);
+#endif
 	while(avail_sz)
 	{
 		/* First, wait for the 4-bytes header (with packet length) */
@@ -109,7 +133,7 @@ void aquarea_ll_process(void)
 			else
 				len = avail_sz;
 
-			if (pkt_sz < BUFFER_SIZE)
+			if (pkt_sz <= BUFFER_SIZE)
 				pbuf = (buffer_rx + buffer_w);
 			else
 			{
@@ -123,18 +147,29 @@ void aquarea_ll_process(void)
 
 		/* Read received data ! */
 		len = uart_read_bytes(AQUAREA_UART, pbuf, len, 100);
-
-		printf("Recv:");
-		for (i = 0; i < len; i++)
-			printf(" %.2X", pbuf[i]);
-		printf("\r\n");
-
+#ifdef AQUAREA_LOG
+		if (aquarea_ll_log & (2 << 8))
+		{
+			printf("Recv:");
+			for (i = 0; i < len; i++)
+				printf(" %.2X", pbuf[i]);
+			printf("\r\n");
+		}
+#endif
 		/* Update counters */
 		buffer_w += len;
 		avail_sz -= len;
+
+		/* If all byets of the packet have been received :) */
 		if (buffer_w == pkt_sz)
 		{
-			printf("Packet fully received\n");
+			if (checksum_verify(buffer_rx))
+			{
+				printf("Packet fully received\n");
+				aquarea_rx(buffer_rx, pkt_sz);
+			}
+			else
+				printf("AQUAREA: Ignore invalid packet\n");
 			buffer_w = 0;
 		}
 	}
@@ -144,5 +179,92 @@ void aquarea_ll_process(void)
 err_uart:
 	printf("AQUAREA: Major error into process()\r\n");
 	return;
+}
+
+/**
+ * @brief Send a packet to Aquarea
+ *
+ * @param packet Pointer to a byte array with packet to send
+ * @return integer Number of bytes sent
+ */
+int aquarea_ll_send(unsigned char *packet)
+{
+	size_t pkt_len;
+#ifdef AQUAREA_LOG
+	int i;
+#endif
+
+	/* Compute packet length */
+	pkt_len = (packet[1] + 3);
+
+	/* Insert packet checksum */
+	packet[pkt_len - 1] = checksum(packet, pkt_len - 1);
+
+	/* Send request to Aquarea */
+	uart_write_bytes(AQUAREA_UART, (const char *)packet, pkt_len);
+
+#ifdef AQUAREA_LOG
+	printf("Send packet :\n");
+	for (i = 0; i < pkt_len; i++)
+	{
+		printf("%.2X ", packet[i]);
+		if ((i & 15) == 15)
+			printf("\n");
+	}
+	if ((i & 15) != 0)
+		printf("\n");
+#endif
+
+	return(pkt_len);
+}
+
+/* -------------------------------------------------------------------------- */
+/* --                          Internal functions                          -- */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Compute the checksum of a buffer
+ *
+ * @param buffer Pointer to an array with input bytes
+ * @param len    Number of bytes into the buffer
+ * @return uint8 Value of the computed checksum
+ */
+static uint8_t checksum(uint8_t *buffer, int len)
+{
+	uint32_t cksum;
+	int i;
+
+	cksum = 0;
+	for (i = 0; i < len; i++)
+		cksum += buffer[i];
+	cksum = ((cksum & 0xFF) ^ 0xFF) + 1;
+
+	return(cksum);
+}
+
+/**
+ * @brief Verify the checksum of a packet
+ *
+ * @param packet Pointer to a buffer where packet to verify is stored
+ * @return boolean True is returned if checksum is valid
+ */
+static int checksum_verify(uint8_t *packet)
+{
+	uint32_t cksum;
+	size_t len;
+	int result = 0;
+
+	/* Get data length into the packet header */
+	len = packet[1];
+	/* Compute checksum of the packet */
+	cksum = checksum(packet, len + 2);
+
+	/* Compare computed checksum with value into the packet itself */
+	if (cksum == packet[len+2])
+		result = 1;
+	else
+		printf("AQUAREA: Invalid RX checksum %.2X != %.2X\n", packet[len+2], cksum);
+
+	return(result);
 }
 /* EOF */

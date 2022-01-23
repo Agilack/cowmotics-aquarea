@@ -13,17 +13,34 @@
  # for more details.
  # This program is distributed WITHOUT ANY WARRANTY.
 ##
-
+TARGET = unit_test
+CC = gcc
 CFLAGS = -Wall -g
 CFLAGS += -Iinclude -I../../main
 
-all:
-	cc $(CFLAGS) -c main.c -o main.o
-	cc $(CFLAGS) -c driver_uart.c -o driver_uart.o
-	cc $(CFLAGS) -c ../../main/aquarea_ll.c -o aquarea_ll.o
-	cc -o unit_test main.o driver_uart.o aquarea_ll.o
+BUILDDIR = build
+SRC = main.c log.c driver_uart.c
+SRC += test_init.c test_rx.c test_cksum.c
+
+COBJ = $(patsubst %.c, $(BUILDDIR)/%.o,$(SRC))
+
+all: $(BUILDDIR) $(COBJ) aquarea_ll.o
+	@echo "  [LD] $(TARGET)"
+	@$(CC) -o $(TARGET) $(COBJ) aquarea_ll.o
 
 clean:
-	rm -f unit_test
-	rm -f *.o
+	rm -f $(TARGET)
+	rm -f $(BUILDDIR)/*.o aquarea_ll.o
 	rm -f *~
+
+$(BUILDDIR):
+	@echo "  [MKDIR] $@"
+	@mkdir $(BUILDDIR)
+
+$(COBJ) : $(BUILDDIR)/%.o: %.c
+	@echo "  [CC] $@"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+aquarea_ll.o:
+	@echo "  [CC] $@"
+	@$(CC) $(CFLAGS) -c ../../main/aquarea_ll.c -o aquarea_ll.o

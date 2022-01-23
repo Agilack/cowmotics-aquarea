@@ -1,6 +1,6 @@
 /**
- * @file  main/aquarea_ll.h
- * @brief Headers and definitions for Aquarea low level functions
+ * @file  main/aquarea_.h
+ * @brief Headers and definitions for Aquarea functions
  *
  * @author Saint-Genest Gwenael <gwen@agilack.fr>
  * @copyright Agilack (c) 2022
@@ -13,14 +13,10 @@
  * for more details.
  * This program is distributed WITHOUT ANY WARRANTY.
  */
-#ifndef AQUAREA_LL_H
-#define AQUAREA_LL_H
+#ifndef AQUAREA_H
+#define AQUAREA_H
 
-#define AQUAREA_UART 2
-#define AQUAREA_LOG
-
-int  aquarea_ll_init(void);
-void aquarea_ll_process(void);
-int  aquarea_ll_send(unsigned char *packet);
+void aquarea_init(void);
+void aquarea_process(void);
 
 #endif

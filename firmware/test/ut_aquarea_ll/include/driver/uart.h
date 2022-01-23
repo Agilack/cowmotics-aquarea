@@ -5,9 +5,17 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define UART_NUM_2 2
+// Valid UART port number
+#define UART_NUM_0             (0) /*!< UART port 0 */
+#define UART_NUM_1             (1) /*!< UART port 1 */
+#define UART_NUM_2             (2) /*!< UART port 2 */
 
-#define UART_PIN_NO_CHANGE      (-1)
+#define UART_PIN_NO_CHANGE      (-1) /*!< Constant for uart_set_pin function which indicates that UART pin should not be changed */
+
+/**
+ * @brief UART port number, can be UART_NUM_0 ~ (UART_NUM_MAX -1).
+ */
+typedef int uart_port_t;
 
 /**
  * @brief UART word length constants
@@ -79,9 +87,10 @@ typedef struct {
 
 /* ========================================================================== */
 
-int uart_driver_install(int uart_num, int rx_buffer_size, int tx_buffer_size, int queue_size, void *uart_queue, int intr_alloc_flags);
+int uart_driver_install(uart_port_t uart_num, int rx_buffer_size, int tx_buffer_size, int queue_size, void *uart_queue, int intr_alloc_flags);
 int uart_get_buffered_data_len(int uart_num, size_t* size);
 int uart_param_config(int uart_num, const uart_config_t *uart_config);
 int uart_read_bytes(int uart_num, void* buf, uint32_t length, int ticks_to_wait);
 int uart_set_pin(int uart_num, int tx_io_num, int rx_io_num, int rts_io_num, int cts_io_num);
+int uart_write_bytes(int uart_num, const void *src, int size);
 #endif

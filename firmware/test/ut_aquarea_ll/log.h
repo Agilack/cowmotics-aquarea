@@ -1,6 +1,6 @@
 /**
- * @file  main/aquarea_ll.h
- * @brief Headers and definitions for Aquarea low level functions
+ * @file  log.h
+ * @brief Headers and definitions for the log module
  *
  * @author Saint-Genest Gwenael <gwen@agilack.fr>
  * @copyright Agilack (c) 2022
@@ -13,14 +13,18 @@
  * for more details.
  * This program is distributed WITHOUT ANY WARRANTY.
  */
-#ifndef AQUAREA_LL_H
-#define AQUAREA_LL_H
+#ifndef LOG_H
+#define LOG_H
 
-#define AQUAREA_UART 2
-#define AQUAREA_LOG
+#define COLOR_NONE   "\x1B[0m"
+#define COLOR_RED    "\x1B[31m"
+#define COLOR_GREEN  "\x1B[32m"
+#define COLOR_YELLOW "\x1B[33m"
+#define COLOR_BLUE   "\x1B[34m"
 
-int  aquarea_ll_init(void);
-void aquarea_ll_process(void);
-int  aquarea_ll_send(unsigned char *packet);
+void log_init(void);
+void log_start(char *name);
+void log_end(void);
+void log_dump(char *name);
 
 #endif
